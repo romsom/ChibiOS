@@ -95,9 +95,9 @@ static __attribute__((noreturn)) THD_FUNCTION(Thread1, arg) {
   chRegSetThreadName("blinker");
   while (true) {
     systime_t time = serusbcfg.usbp->state == USB_ACTIVE ? 250 : 500;
-    palClearPad(GPIOB, GPIOB_LED);
+    palClearPad(GPIOC, GPIOC_LED);
     chThdSleepMilliseconds(time);
-    palSetPad(GPIOB, GPIOB_LED);
+    palSetPad(GPIOC, GPIOC_LED);
     chThdSleepMilliseconds(time);
   }
 }
